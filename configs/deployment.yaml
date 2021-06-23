@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msql
+  labels:
+    app: msql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msql
+  template:
+    metadata:
+      labels:
+        app: msql
+    spec:
+      containers:
+      - image: msql
+        name: msql
